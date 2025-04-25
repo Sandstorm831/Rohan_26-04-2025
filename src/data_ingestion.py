@@ -4,7 +4,7 @@ import polars as pl
 from sqlite3.dbapi2 import Cursor
 
 filePath = os.path.abspath(__file__)
-db_loc = filePath.split("project_loop")[0] + "project_loop/ingestor.db"
+db_loc = filePath.split("Rohan_26-04-2025")[0] + "Rohan_26-04-2025/ingestor.db"
 
 
 def defineTables(cursor: Cursor):
@@ -33,12 +33,12 @@ def defineTables(cursor: Cursor):
 def ingest_data():
     print("starting data ingestion")
     raw_path = os.path.abspath(__file__)
-    timezones_path = raw_path.split("project_loop")[
-        0] + "project_loop/data/timezones.parquet"
-    ping_path = raw_path.split("project_loop")[
-        0] + "project_loop/data/store_status.parquet"
-    hours_path = raw_path.split("project_loop")[
-        0] + "project_loop/data/menu_hours.parquet"
+    timezones_path = raw_path.split("Rohan_26-04-2025")[
+        0] + "Rohan_26-04-2025/data/timezones.parquet"
+    ping_path = raw_path.split("Rohan_26-04-2025")[
+        0] + "Rohan_26-04-2025/data/store_status.parquet"
+    hours_path = raw_path.split("Rohan_26-04-2025")[
+        0] + "Rohan_26-04-2025/data/menu_hours.parquet"
     df_timezones = pl.scan_parquet(timezones_path).collect()
     df_ping = pl.scan_parquet(ping_path).collect()
     df_hours = pl.scan_parquet(hours_path).collect()
@@ -100,9 +100,9 @@ def ingest_data():
 
 def data_ingestor():
     try:
+        print("are you coming here")
         conn = sqlite3.connect(db_loc)
         cursor = conn.cursor()
-
         # define and create Tables
         defineTables(cursor)
 
@@ -113,4 +113,4 @@ def data_ingestor():
         conn.close()
 
     except sqlite3.OperationalError as e:
-        print("Failed to open database: ", e)
+        print("Failed to open database: ", e, e.sqlite_errorname)

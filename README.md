@@ -16,6 +16,8 @@
     <li><a href="#built-with">Built with</a></li>
     <li><a href="#prerequisites">Prerequisites</a></li>
     <li><a href="#installation">Installation</a></li>
+    <li><a href="#algorithm-description">Algorithm Description</a></li>
+    <li><a href="#results-and-improvements">Results and Improvements</a></li>
     <li><a href="#license">License</a></li>
   </ol>
 
@@ -46,11 +48,11 @@ Once you finish installation Node.js, follow the commands to setup the project l
 
 1. clone the project
    ```sh
-   git clone https://github.com/Sandstorm831/project_loop.git
+   git clone https://github.com/Sandstorm831/Rohan_26-04-2025.git
    ```
 2. enter the project
    ```sh
-   cd project_loop
+   cd Rohan_26-04-2025
    ```
 3. Install python packages
    ```sh
@@ -81,13 +83,13 @@ The main algorithm flow looks like this:
 6. We iterate over all the the timestamps, converted to local-timestamp, and whenever we find an active timestamp, we take a max stretch of 1 hour, 30 minutes before and after the timestamp as active.
 7. Anykind of overlapping is dealt by keeping a track of last processed timestamp, and only those time-stretches are taken which lies inside the working hours.
 8. We calculate the total working hours of the store
-9. We calculate the final report and save it in the root of the project in the name of [report.csv](https://github.com/Sandstorm831/project_loop/blob/master/report.csv).
+9. We calculate the final report and save it in the root of the project in the name of [report.csv](./report.csv).
 
 
-> You won't see any extrapolation, as I don't think it's needed. I have assumed all the active time-stamps as active, and all the missing and inactive time-stamps as inactive. To understand my thought process, please go through [this](https://github.com/Sandstorm831/project_loop/blob/master/info.txt)
+> You won't see any extrapolation, as I don't think it's needed. I have assumed all the active time-stamps as active, and all the missing and inactive time-stamps as inactive. To understand my thought process, please go through [this](./info.txt)
 
 ## Results and Improvements
-I am able to generate the whole report in `less then 10 seconds` and implement multi-threading. You can find the final report.csv [here](https://github.com/Sandstorm831/project_loop/blob/master/report.csv). There are a few way we can make the code more efficient: 
+I am able to generate the whole report in `less then 10 seconds` and implement multi-threading. You can find the final report.csv [here](./report.csv). There are a few way we can make the code more efficient: 
 1. Make custom polars expressions to pipe basic calculation process more efficiently.
 2. Incrementally build the final csv file, instead of storing all the data and building at once.
 

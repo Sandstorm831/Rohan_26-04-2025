@@ -10,8 +10,8 @@ from src.volatile import processing_status
 from src.data_ingestion import data_ingestor
 
 filePath = os.path.abspath(__file__)
-db_loc = filePath.split("project_loop")[0] + "project_loop/ingestor.db"
-result_loc = filePath.split("project_loop")[0] + "project_loop/report.csv"
+db_loc = filePath.split("Rohan_26-04-2025")[0] + "Rohan_26-04-2025/ingestor.db"
+result_loc = filePath.split("Rohan_26-04-2025")[0] + "Rohan_26-04-2025/report.csv"
 
 internal_curr_datetime = "2024-10-14 23:55:18.727055 UTC"
 internal_curr_datetime_obj_utc = datetime.strptime(
